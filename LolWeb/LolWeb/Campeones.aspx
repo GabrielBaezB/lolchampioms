@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="LolWeb.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Campeones.aspx.cs" Inherits="LolWeb.Campeones" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-    <header class="container-fluid">
+   <header class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">LOL Champions</a>
@@ -26,37 +26,34 @@
             </div>
         </nav>
     </header>
+
     <form id="form1" runat="server">
         <main class="container-fluid mt-5">
             <div class="row">
+                <%String[] campeones = { "Lux", "Teemo", "Garen", "Katarina", "Ahri" };
+                    String[] fotos = { "https://i.ytimg.com/vi/TZoCU8T5B8A/maxresdefault.jpg", "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg",
+                        "https://www.mobafire.com//images/social/build-card/garen.jpg", "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg", "https://www.pcgamesn.com/wp-content/uploads/2018/10/kda-ahri-splash-580x334.jpg" };
+                    for(int i = 0;i < campeones.Length; i++)
+                    {
+
+                    %>
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card-header bg-primary text-white">
-                        <h5>Nuestro Objetivo</h5>
-                    </div>
-                    <div class="card-body">
-                        <p>
-                            What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-
-will uncover many web sites still in their infancy. Various versioned s, sometimes by accident, sometimes on purpose (injected humour and the like).
-                        </p>
-                    </div>
-                </div>
-                <div class="col col-md col-lg">
-                    <div class="card mt-2 mt-md-0">
-                        <div class="card-header">
-                            <h5>Campeon del Mes</h5>
+                    <div class="card">
+                        <div class="card-header bg-dark bg-gradient text-white text-center">
+                            <h5><%=campeones[i] %></h5>
                         </div>
                         <div class="card-body">
-                            <img src="imagenes/lux.jpg" class="img-fluid" />
-                            </div>
+                            <img src="<%=fotos[i] %>" class="img-fluid" />
                         </div>
                     </div>
                 </div>
+                <%} %>
+            </div>
         </main>
     </form>
-    <footer class="bg-dark container-fluid fixed-bottom pt-2 pb-2 d-none d-lg-block">
+
+
+        <footer class="bg-dark container-fluid pt-2 pb-2 d-none d-lg-block">
         <div class="row">
             <div class="col-12 text-white text-center">
                 <h5>Aca va el footer</h5>
@@ -67,5 +64,6 @@ will uncover many web sites still in their infancy. Various versioned s, sometim
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
 </body>
 </html>
